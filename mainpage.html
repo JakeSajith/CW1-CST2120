@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Rock, Paper & Scissors!</title>
+</head>
+<body>
+    <!-- navigation -->
+<div class="navigationbar">
+        <button type="button" id="logoutbutton">Log Out</button>
+        Rock, Paper and Scissors!
+        <button type="button" id="gototutorialbutton">Tutorial</button>
+    </div>
+        <!-- game image -->
+    <div id="gameICON">
+        <img src="gameicon.png">
+    </div>
+        <!-- main page/login -->
+    <div class="LoginContainer">
+        <form id="LoginMenu">
+            <!-- username -->
+            <div class="InputRow">
+                <label for="username" class="labelBox">User:</label>
+                <input type="text" id="username" name="username" placeholder="">
+            </div>
+            <!-- email -->
+            <div class="InputRow">
+                <label for="email" class="labelBox">Email:</label>
+                <input type="text" id="email" name="email" placeholder="">
+            </div>
+            <!-- password -->
+            <div class="InputRow">
+                <label for="password" class="labelBox">Password:</label>
+                <input type="password" id="password" name="password" placeholder="">
+            </div>
+            <!-- login & signup -->
+            <button type="button" id="LoginButton">Login</button>
+            <button type="button" id="SignupButton">Sign Up</button>
+            <!-- signuprequest wip --> 
+             <div id="newinputs">
+             </div>
+            <!-- Play as guest -->
+            <button type="button" id="PASButton">Play as guest</button>
+            <!-- message_displayer -->
+            <div id="message" style="color:white;"></div>
+        </form>
+    </div>
+<script src="RPSCode.js" defer></script>
+</body>
+</html>
