@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../CSS file/game_pageCSS.css">
+    <title>Rock, Paper & Scissors!</title>
+</head>
+<body>
+    <!-- navigation -->
+<div class="navigationbar">
+        <button type="button" id="logoutbutton">Log Out</button>
+        Rock, Paper and Scissors!
+        <button type="button" id="gototutorialbutton">Tutorial</button>
+    </div>
+        <!-- game image -->
+    <div id="gameICON">
+        <img src="../Assets/Images/gameicon.png">
+    </div>
+    <!-- message_displayer -->
+    <div id="message" style="color:white;"></div>
+    <!-- player handler -->
+    <div id = "playerinfo">
+        <h1 id = "player_name" ></h1>
+        <h2 id = "player_score"></h2>    <!-- player score is a local score that will be added to global score later on. -->
+    </div>
+</div>
+    <!-- player choices -->
+<div id="PlayerChoices">
+        <img id="rock" src="../Assets/Images/rock.png" class="buttonstyle">
+        <img id="paper" src="../Assets/Images/paper.png"class="buttonstyle">
+        <img id="scissors" src="../Assets/Images/scissors.png" class="buttonstyle">
+</div>
+    <!-- computer handler -->
+     <div id="computerinfo">
+    <h1>Computer</h1>
+    <h2 id="computer_score">Score: 0</h2>
+</div>
+    <!-- computer choices -->
+<div id="ComputerChoices">
+    <img id="cRock"src="../Assets/Images/rock.png" class="buttonstyle">
+    <img id="cPaper" src="../Assets/Images/paper.png" class="buttonstyle">
+    <img id="cScissors" src="../Assets/Images/scissors.png" class="buttonstyle">
+</div>
+<script src="../JavaScript file/Game_PageJS.js" defer></script>
+</body>
+</html>
