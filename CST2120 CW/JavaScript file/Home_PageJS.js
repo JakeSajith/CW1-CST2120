@@ -68,9 +68,15 @@ document.getElementById("LoginButton").addEventListener("click", function() {
     }
 });
 
+// Play as guest listener
 
-
-
+document.getElementById("PASButton").addEventListener("click", function() {
+    message_displayer("Redirecting you..","Balsamiq Sans","20px","yellow",3000)
+    setTimeout(() => {
+        window.location.href= "../html_files/Game_Page.html";
+    },3500);    
+    
+});
 
 
 

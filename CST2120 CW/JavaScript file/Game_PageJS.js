@@ -24,16 +24,15 @@ document.getElementById("player_name").innerText = PlayerName;
 let PlayerScore = 0;
 let ComputerScore = 0;
 // player score
-if (!Player) {
-    document.getElementById("player_score").innerText = "Score: N/A (SIGN UP!)"
-} else {
-         document.getElementById("player_score").innerText = "Score: " + PlayerScore;
-}
 // Update score displays
-function UpdateScores() {
-    document.getElementById("player_score").innerText = "Score: " + PlayerScore;
-    document.getElementById("computer_score").innerText = "Score: " + ComputerScore;
-}
+function Score_Updater() {
+    document.getElementById("player_score").innerText = "Score: " +PlayerScore;
+    document.getElementById("computer_score").innerText = "Score: " +ComputerScore;
+    if (!Player) {
+        document.getElementById("player_score").innerText = "Score: N/A (SIGN UP!)"
+        document.getElementById("logoutbutton").innerText = "Login"
+    }
+};
 
 //logout 
 document.getElementById('logoutbutton').addEventListener('click',function() {
@@ -42,7 +41,6 @@ document.getElementById('logoutbutton').addEventListener('click',function() {
     setTimeout(() =>{
         window.location.href = "../html_files/Home_Page.html"
     },4000)
-
 });
 
 // Player choices
@@ -50,7 +48,7 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
-// Computer choices
+// bot rng
 const cRock = document.getElementById("cRock");
 const cPaper = document.getElementById("cPaper");
 const cScissors = document.getElementById("cScissors");
@@ -61,23 +59,23 @@ function PlayRound(PlayerChoice) {
     const ComputerChoice = choices[Math.floor(Math.random() * 3)];
     // picked choice validation
     if (PlayerChoice === ComputerChoice) {
-        message_displayer("Tie! No Points.", "Balsamiq Sans", "20px", "Yellow", 3000);
+        message_displayer("Tie! No Points.", "Balsamiq Sans", "40px", "Yellow", 3000);
     } else if (
         (PlayerChoice === "rock" && ComputerChoice === "scissors") ||
         (PlayerChoice === "paper" && ComputerChoice === "rock") ||
         (PlayerChoice === "scissors" && ComputerChoice === "paper")
     ) {
-        message_displayer("Youve Won!", "Balsamiq Sans", "20px", "green", 3000);
+        message_displayer("Youve Won!", "Balsamiq Sans", "40px", "green", 3000);
         PlayerScore++;
     } else {
-        message_displayer("Computer Wins!", "Balsamiq Sans", "20px", "Red", 3000);
+        message_displayer("Computer Wins!", "Balsamiq Sans", "40px", "Red", 3000);
         ComputerScore++;
     }
 
-    // Update scores each round
-    UpdateScores();
+    // updates the score every round
+    Score_Updater();
 
-    // Save local score to Player object
+    // local score to Player object
     if (Player) {
         Player.local_score_point.push(PlayerScore);
         localStorage.setItem("Player", JSON.stringify(Player));
@@ -89,6 +87,20 @@ rock.addEventListener("click", () => PlayRound("rock"));
 paper.addEventListener("click", () => PlayRound("paper"));
 scissors.addEventListener("click", () => PlayRound("scissors"));
 
-// update scores each round
-UpdateScores();
+Score_Updater();
 
+// fade controller for easing on buttons
+let faded_choices = [
+  document.getElementById("rock"),
+  document.getElementById("paper"),
+  document.getElementById("scissors")
+];
+
+faded_choices.forEach(choice => {
+    choice.addEventListener("mouseover", () => {
+        choice.style.opacity = "0.5";
+    });
+    choice.addEventListener("mouseout", () => {
+        choice.style.opacity = "1"; //
+    });
+});
