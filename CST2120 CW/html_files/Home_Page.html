@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <head>
-        <link rel="stylesheet" href="../CSS file/home_pageCSS.css">
+        <link rel="stylesheet" href="../CSS file/styles.css">
     <title>Rock, Paper & Scissors!</title>
 </head>
-<body>
+<body id = "home_page">
     <!-- navigation -->
 <div class="navigationbar">
-        <button type="button" id="logoutbutton">Log Out</button>
-        Rock, Paper and Scissors!
-        <button type="button" id="gototutorialbutton">Tutorial</button>
+        <span class="game_text">Rock, Paper and Scissors!</span>
     </div>
         <!-- game image -->
     <div id="gameICON">
         <img src="../Assets/Images/gameicon.png">
     </div>
-        <!-- main page/login -->
+        <!-- main page-->
     <div class="LoginContainer">
         <form id="LoginMenu">
             <!-- username -->
             <div class="InputRow">
                 <label for="username" class="labelBox">User:</label>
-                <input type="text" id="username" name="username" placeholder="">
+                <input type="text" id="username" placeholder="">
             </div>
             <!-- email -->
             <div class="InputRow">
                 <label for="email" class="labelBox">Email:</label>
-                <input type="text" id="email" name="email" placeholder="">
+                <input type="text" id="email" placeholder="">
             </div>
             <!-- password -->
             <div class="InputRow">
                 <label for="password" class="labelBox">Password:</label>
-                <input type="password" id="password" name="password" placeholder="">
+                <input type="password" id="password" placeholder="">
             </div>
             <!-- login & signup -->
             <button type="button" id="LoginButton">Login</button>
             <button type="button" id="SignupButton">Sign Up</button>
-            <!-- signuprequest wip --> 
-             <div id="newinputs">
-             </div>
             <!-- Play as guest -->
             <button type="button" id="PASButton">Play as guest</button>
             <!-- message_displayer -->

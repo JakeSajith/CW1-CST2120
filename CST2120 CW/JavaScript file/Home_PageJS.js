@@ -10,6 +10,7 @@ function message_displayer(text, font, size, color, duration) {
     }, duration);
     }
 
+
 //user data initialization //
 const userdata = JSON.parse(localStorage.getItem("userdata")) || {};
 
@@ -17,6 +18,9 @@ const userdata = JSON.parse(localStorage.getItem("userdata")) || {};
 document.getElementById('SignupButton').addEventListener('click',function() {
     const username = document.getElementById("username").value.trim();
     const email = document.getElementById("email").value.trim();
+    if (!email.includes("@")) {
+        message_displayer("Email must be valid.", "Balsamiq Sans", "20px", "red", 3000);
+        return; }
     const password = document.getElementById("password").value.trim();
     let emptyfields = [];
     if (!username) emptyfields.push("Username");
@@ -46,7 +50,6 @@ document.getElementById("LoginButton").addEventListener("click", function() {
     const email_input = document.getElementById("email").value.trim();
     const password_input = document.getElementById("password").value.trim();
     const user_input = document.getElementById("username").value.trim();
-    const userdata = JSON.parse(localStorage.getItem('userdata')) || {};
     if (userdata[email_input]) {
         if (userdata[email_input].password === password_input &&
             userdata[email_input].username === user_input) {
@@ -54,7 +57,6 @@ document.getElementById("LoginButton").addEventListener("click", function() {
             localStorage.setItem("Player",JSON.stringify({
                 user_email: email_input,
                 username: userdata[email_input].username,
-                global_score_point: userdata[email_input].global_score_point,
                 local_score_point: []
             }));
             setTimeout(() => {
@@ -77,18 +79,4 @@ document.getElementById("PASButton").addEventListener("click", function() {
     },3500);    
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
