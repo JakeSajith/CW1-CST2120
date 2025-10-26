@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+        <link rel="stylesheet" href="../CSS file/styles.css">
+    <title>Rock, Paper & Scissors!</title>
+</head>
+<body id = "home_page">
+    <!-- navigation -->
+<div class="navigationbar">
+        <span class="game_text">Rock, Paper and Scissors!</span>
+    </div>
+        <!-- game image -->
+    <div id="gameICON">
+        <img src="../Assets/Images/gameicon.png">
+    </div>
+        <!-- main page-->
+    <div class="LoginContainer">
+        <form id="LoginMenu">
+            <!-- username -->
+            <div class="InputRow">
+                <label for="username" class="labelBox">User:</label>
+                <input type="text" id="username" placeholder="">
+            </div>
+            <!-- email -->
+            <div class="InputRow">
+                <label for="email" class="labelBox">Email:</label>
+                <input type="text" id="email" placeholder="">
+            </div>
+            <!-- password -->
+            <div class="InputRow">
+                <label for="password" class="labelBox">Password:</label>
+                <input type="password" id="password" placeholder="">
+            </div>
+            <div class="InputRow">
+                <label id="phonelabel" for="phone" class="labelBox">Phone:</label>
+                <input type="text" id="phone" placeholder="">
+            </div>
+            <div class="InputRow">
+                <label id="agelabel"for="age" class="labelBox">Age:</label>
+                <input type="text" id="age" placeholder="">
+            </div>
+            <!-- login & signup -->
+            <button type="button" id="LoginButton">Login</button>
+            <button type="button" id="SignupButton">Sign Up</button>
+            <!-- Play as guest -->
+            <button type="button" id="PASButton">Play as guest</button>
+            <!-- message_displayer -->
+            <div id="message" style="color:white;"></div>
+        </form>
+    </div>
+<script type="module" src="../JavaScript file/Home_PageJS.js" defer></script>
+</body>
+</html>
