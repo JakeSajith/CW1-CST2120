@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../CSS file/styles.css">
+    <link rel="stylesheet" href="../CSS_file/styles.css">
     <title>Rock, Paper & Scissors!</title>
 </head>
 <body id = "game_page">
     <!-- navigation -->
 <div class="navigationbar">
         <button type="button" id="logoutbutton">Log Out</button>
-        <button type="button" id="leaderboardbutton"onclick="window.location.href='Leaderboard.html'">Leaderboard</button>
+        <button type="button" id="leaderboardbutton" onclick="window.location.href='Leaderboard.html'">Leaderboard</button>
     </div>
         <!-- game image -->
     <div id="gameICON">
-        <img src="../Assets/Images/gameicon.png">
+        <img src="../Assets/Images/gameicon.png" alt="Icon">
     </div>
     <!-- message_displayer -->
     <div id="message" style="color:white;"></div>
@@ -20,12 +20,11 @@
         <h1 id = "player_name" ></h1>
         <h2 id = "player_score"></h2>    <!-- player score is a local score that will be added to global score later on. -->
     </div>
-</div>
     <!-- player choices -->
 <div id="PlayerChoices">
-        <img id="rock" src="../Assets/Images/rock.png" class="buttonstyle">
-        <img id="paper" src="../Assets/Images/paper.png"class="buttonstyle">
-        <img id="scissors" src="../Assets/Images/scissors.png" class="buttonstyle">
+        <img id="rock" src="../Assets/Images/rock.png" class="buttonstyle" alt = "Rock icon">
+        <img id="paper" src="../Assets/Images/paper.png" class="buttonstyle" alt = "Paper icon">
+        <img id="scissors" src="../Assets/Images/scissors.png" class="buttonstyle" alt = "Scissor Icon">
 </div>
     <!-- computer name -->
      <div id="computerinfo">
@@ -34,12 +33,12 @@
 </div>
     <!-- computer choices -->
 <div id="ComputerChoices">
-    <img id="comp_rock" src="../Assets/Images/rock.png" class="buttonstyle">
-    <img id="comp_paper" src="../Assets/Images/paper.png" class="buttonstyle">
-    <img id="comp_scissors" src="../Assets/Images/scissors.png" class="buttonstyle">
+    <img id="comp_rock" src="../Assets/Images/rock.png" class="buttonstyle" alt = "C_rock icon">
+    <img id="comp_paper" src="../Assets/Images/paper.png" class="buttonstyle" alt = "C_paper icon">
+    <img id="comp_scissors" src="../Assets/Images/scissors.png" class="buttonstyle" alt = "C_scissors icon">
 </div>
 <!-- round control -->
-<div id="round_controls" style="text-align:center; margin-top:0px;">
+<div id="round_controls">
     <button type="button" id="start_round">Start Round</button>
     <button type="button" id="end_round">End Round</button>
     <h2 id="Round" style="color:white; font-size:30px;">Round: </h2>
@@ -48,7 +47,11 @@
 <div id="playerbestscore">
     <h1 id="global_score" style="color: gold;">Total Score: 0</h1>
 </div>
+    <!-- Timer Display -->
+<div id="timer_container">
+        <h2 id="timer_display" style="color:white; font-size:35px; font-weight:bold;">Time: 3s</h2>
+</div>
 
-<script type = "module" src="../JavaScript file/Game_PageJS.js" defer></script>
+<script type = "module" src="../JavaScript_file/Game_PageJS.js" defer></script>
 </body>
 </html>
