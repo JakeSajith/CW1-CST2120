@@ -93,7 +93,7 @@ class User {
             if (userdata[email_input].password === password_input &&
                 userdata[email_input].username === user_input) {
                 message_displayer("Logged in successfully! Redirecting..", "Balsamiq Sans", "20px", "green", 3000);
-                localStorage.setItem("Player",JSON.stringify({
+                sessionStorage.setItem("Player",JSON.stringify({
                     user_email: email_input,
                     username: userdata[email_input].username,
                     local_score_point: []

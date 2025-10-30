@@ -1,22 +1,25 @@
-const PlayerData = JSON.parse(localStorage.getItem("Player"));
+// redirect back to game
+const PlayerData = JSON.parse(sessionStorage.getItem("Player"));
 document.getElementById("backtogamebutton").onclick = () => {
     window.location.href = "../html_files/Game_Page.html";
 };
 
+// log out button
 const logout_button = document.getElementById('logoutbutton');
 if (!PlayerData || PlayerData.username === "Guest") {
     logout_button.innerText = "Login";
 } else {
     logout_button.innerText = "Log Out";
 }
-
+// event listener
 logout_button.addEventListener('click',function() {
-    localStorage.removeItem("Player");
+    sessionStorage.removeItem("Player");
     setTimeout(() =>{
         window.location.href = "../html_files/Home_Page.html"
     },1500)
 });
 
+// userdata to compare scores
 const userdata = JSON.parse(localStorage.getItem("userdata")) || {};
 
 const users_scores = Object.values(userdata).sort((a, b) => (b.global_score_point || 0) - (a.global_score_point || 0));

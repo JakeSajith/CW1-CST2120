@@ -10,7 +10,7 @@ class PlayerClass {
 }
 
 //fetch playerdata  //
-let PlayerData = JSON.parse(localStorage.getItem("Player"));
+let PlayerData = JSON.parse(sessionStorage.getItem("Player"));
 let Player;
 if (PlayerData) {
     Player = new PlayerClass(PlayerData.user_email, PlayerData.username, PlayerData.local_score_point);
@@ -56,8 +56,8 @@ document.getElementById('logoutbutton').addEventListener('click',function() {
             window.location.href = "../html_files/Home_Page.html";
         }, 500);
     } else {
-        localStorage.removeItem("Player");
-        message_displayer("Logged out. Redirecting..", "Balsamiq Sans", "20px", "blue", 2000);
+        sessionStorage.removeItem("Player");
+        message_displayer("Logged out. Redirecting..", "Balsamiq Sans", "40px", "gold", 2000);
         setTimeout(() => {
             window.location.href = "../html_files/Home_Page.html";
         }, 2500);
@@ -109,7 +109,7 @@ function PlayRound(PlayerChoice) {
     }
     if (Player) {
     Player.local_score_point.push(PlayerScore);
-    localStorage.setItem("Player", JSON.stringify(Player));}
+    sessionStorage.setItem("Player", JSON.stringify(Player));}
     Score_Updater();
     if (Round_Number >= Total_Rounds) {
         Round_Status = false;
@@ -119,7 +119,7 @@ function PlayRound(PlayerChoice) {
     }
     reset_timer();
     start_timer(() => {
-        message_displayer("Time's up! Bot wins the game!", "Balsamiq Sans", "30px", "orange", 2000);
+        message_displayer("Time's up!", "Balsamiq Sans", "30px", "orange", 2000);
         Round_Number = Total_Rounds;
         ComputerScore = PlayerScore + 9999999999;
         Score_Updater();
@@ -174,7 +174,6 @@ document.getElementById("start_round").addEventListener("click", () => {
     Round_Status = true;
     reset_timer();
     start_timer(() => {
-
         message_displayer("Time's up! Bot wins the game!", "Balsamiq Sans", "30px", "orange", 2000);
         Round_Number = Total_Rounds;
         ComputerScore = PlayerScore + 9999999999;
@@ -219,6 +218,7 @@ document.addEventListener("keydown", (e) => {
     if (key === "s") PlayRound("scissors");
 });
 
+// animated pictures for the choices
 faded_choices.forEach(choice => {
     choice.addEventListener("mouseover", () => {
         choice.style.opacity = "0.5";

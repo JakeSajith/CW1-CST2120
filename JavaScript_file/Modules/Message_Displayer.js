@@ -8,7 +8,7 @@ export function message_displayer(text, font, size, color, duration) {
     textmodification.style.fontFamily = font;
     textmodification.style.fontSize = size;
     textmodification.style.color = color;
-    // new timeout ID
+    // new timeout 
     messageTimeout = setTimeout(() => {
         textmodification.innerText = "";
         messageTimeout = null; // reset
